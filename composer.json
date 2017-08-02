@@ -9,7 +9,7 @@
     ],
     "require": {
         "apikr/aligo-sms": "^0.7.1",
-        "laravel/laravel": "^5.4"
+        "illuminate/support": "^5.4"
     },
     "autoload": {
         "psr-4": {
