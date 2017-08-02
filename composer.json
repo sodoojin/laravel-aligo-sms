@@ -1,0 +1,19 @@
+{
+    "name": "visualplus/laravel-aligo-sms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "djso",
+            "email": "visualplus@daum.net"
+        }
+    ],
+    "require": {
+        "apikr/aligo-sms": "^0.7.1",
+        "laravel/laravel": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visualplus\\LaravelAligoSms\\": "src"
+        }
+    }
+}
