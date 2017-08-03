@@ -3,7 +3,6 @@
 
 namespace Visualplus\LaravelAligoSms;
 
-use Apikr\Aligo\Sms\Configuration;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,15 +21,14 @@ class LaravelAligoSmsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(AligoSmsSender::class, function() {
-            $httpClient = new Client();
-
-            $conf = new Configuration([
-                'id' => config('aligo-sms.userid'),
-                'apikey' => config('aligo-sms.key'),
-                'sender' => config('aligo-sms.sender'),
-            ]);
-
-            return new AligoSmsSender($httpClient, $conf);
+            return new AligoSmsSender(
+                new Client(),
+                [
+                    'userid' => config('aligo-sms.userid'),
+                    'key' => config('aligo-sms.key'),
+                    'sender' => config('aligo-sms.sender'),
+                ]
+            );
         });
     }
 }
